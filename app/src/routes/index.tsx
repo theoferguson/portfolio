@@ -1,12 +1,12 @@
 import { component$ } from '@builder.io/qwik';
-import Post from './post';
+import { Header } from '~/components/Header';
 
 export default component$(() => {
   return (
     <>
-      <header>Theo's Portfolio Site</header>
+      <Header />
       <body>
-
+        content
       </body>
       <footer>
         <p>© 2023 theo ferguson</p>

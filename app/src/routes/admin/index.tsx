@@ -13,5 +13,4 @@ export default component$(() => {
         </Form>
         <p>{session.value?.user?.email}</p>
     </>;
-}
-);
+});
