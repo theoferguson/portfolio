@@ -10,9 +10,7 @@ export const Header = component$(() => {
             </div>
             <div>
                 <a href="/">Home</a>
-                <a href="/posts">Posts</a>
                 <a href="/about">About</a>
-                <a href="/admin">Contact</a>
             </div>
         </div>
     );
