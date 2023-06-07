@@ -2,8 +2,6 @@ import { component$ } from '@builder.io/qwik';
 import { Header } from '~/components/Header';
 import { PostsContainer } from '~/components/PostsContainer';
 
-
-
 export default component$(() => {
   return (
     <>

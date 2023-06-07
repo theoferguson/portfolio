@@ -1,6 +1,18 @@
-import { component$, Slot, useStyles$ } from '@builder.io/qwik';
+import { component$, Slot } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
-import styles from './styles.css?inline';
+
+const API_URL = import.meta.env.DEV ? import.meta.env.PUBLIC_DEV_API_URL : import.meta.env.PUBLIC_PROD_API_URL;
+
+export const getAllPosts = routeLoader$(async (requestEvent) => {
+    const result = await fetch(`${API_URL}/api/posts?populate=*`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'bearer ' + requestEvent.env.get('STRAPI_API_TOKEN')
+        }
+    });
+    return result.json();
+})
 
 export const useServerTimeLoader = routeLoader$(() => {
   return {
@@ -9,7 +21,6 @@ export const useServerTimeLoader = routeLoader$(() => {
 });
 
 export default component$(() => {
-  // useStyles$(styles);
   return (
     <>
       <main>
