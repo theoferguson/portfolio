@@ -4,4 +4,4 @@ import { PostsContainer } from "~/components/PostsContainer";
 export default component$(() => {
 
     return <PostsContainer />
-});
+}); 
