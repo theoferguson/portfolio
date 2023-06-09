@@ -1,5 +1,6 @@
 import { component$, Slot } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
+import { Header } from '~/components/Header';
 
 const API_URL = import.meta.env.DEV ? import.meta.env.PUBLIC_DEV_API_URL : import.meta.env.PUBLIC_PROD_API_URL;
 
@@ -23,6 +24,7 @@ export const useServerTimeLoader = routeLoader$(() => {
 export default component$(() => {
   return (
     <>
+      <Header />
       <main>
         <Slot />
       </main>

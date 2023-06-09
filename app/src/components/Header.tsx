@@ -1,16 +1,21 @@
-import { component$ } from "@builder.io/qwik";
-import { container } from "./Header.css";
+import { component$, useSignal } from "@builder.io/qwik";
+import { header, headerLink, headerLinkSection } from "./Header.css";
+import { useLocation } from "@builder.io/qwik-city";
 
 export const Header = component$(() => {
+    const loc = useLocation();
+    const currentLocation = useSignal(loc.url.pathname);
+
+    console.log(currentLocation.value)
 
     return (
-        <div class={container}>
+        <div class={header}>
             <div>
-                Theo's Portfolio Site
+                Theo Ferguson
             </div>
-            <div>
-                <a href="/">Home</a>
-                <a href="/about">About</a>
+            <div class={headerLinkSection}>
+                <a class={headerLink} href="/" style={currentLocation.value === "/" ? "text-decoration: underline; text-underline-offset: 3px" : ""}>WORK</a>
+                <a class={headerLink} href="/about" style={currentLocation.value.includes('about') ? "text-decoration: underline; text-underline-offset: 3px" : ""}>ABOUT</a>
             </div>
         </div>
     );

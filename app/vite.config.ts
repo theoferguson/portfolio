@@ -8,7 +8,9 @@ export default defineConfig(({ mode }) => {
   console.log('mode =', mode)
 
   return {
-    plugins: [qwikCity(), qwikVite(), tsconfigPaths(), vanillaExtractPlugin()],
+    plugins: [qwikCity(), qwikVite(), tsconfigPaths(), vanillaExtractPlugin({
+      emitCssInSsr: true,
+    })],
     preview: {
       headers: {
         'Cache-Control': 'public, max-age=600',

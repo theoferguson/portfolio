@@ -1,5 +1,11 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
+
+export const body = style({
+
+});
 
 globalStyle('html, body', {
-  margin: 0
+  margin: 25,
+  padding: 0,
+  fontFamily: 'Inter',
 });
