@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { body } from '~/app.css';
-import { PostsContainer } from '~/components/PostsContainer';
+import { PostsContainer } from '~/components/Posts/PostsContainer';
 
 export default component$(() => {
   return (

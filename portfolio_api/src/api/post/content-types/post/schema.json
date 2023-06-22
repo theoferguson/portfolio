@@ -15,12 +15,6 @@
     "title": {
       "type": "string"
     },
-    "shortDescription": {
-      "type": "text"
-    },
-    "longDescription": {
-      "type": "text"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -47,6 +41,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::category.category"
+    },
+    "longDescription": {
+      "type": "richtext"
+    },
+    "shortDescription": {
+      "type": "richtext"
     }
   }
 }
