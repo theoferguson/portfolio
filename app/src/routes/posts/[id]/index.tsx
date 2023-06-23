@@ -3,5 +3,6 @@ import { useLocation } from "@builder.io/qwik-city";
 
 export default component$(() => {
     const loc = useLocation();
+    console.log(loc.params)
     return <div>Hello {loc.params.id}!</div>;
 });

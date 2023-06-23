@@ -1,16 +1,19 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useContext, useContextProvider, useStore } from "@builder.io/qwik";
 import { getAllPosts } from "~/routes/layout";
-import { postContainer, postsContainer, projectName } from "./PostsContainer.css";
+import { postsContainer } from "./PostsContainer.css";
+import { PostsContext } from "./PostsContext";
+import { PostCard } from "./PostCard";
+
 
 export const PostsContainer = component$(() => {
+    const postsArray = useStore(getAllPosts().value.data);
+    useContextProvider(PostsContext, postsArray)
+
+    const posts = useContext(PostsContext, postsArray);
 
     return <div class={postsContainer}>
-            {getAllPosts().value.data.map((post: any) => {
-                return <div class={postContainer} key={post.attributes.title}>
-                    <p>{post.attributes.shortDescription}</p>
-                    <p>{post.attributes.longDescription}</p>
-                    <h1 class={projectName} >{post.attributes.title}</h1>
-                </div>
+            {posts.map((post: any) => {
+                return <PostCard key={post.id} post={post}/>
             })}
     </div>
 });
