@@ -17,3 +17,8 @@ export const postContainer = style({
 export const projectName = style({
     width: "100%",
 });
+
+export const postCardImage = style({
+    height: "15rem",
+    objectFit: "cover",
+});
