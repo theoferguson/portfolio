@@ -3,6 +3,7 @@ import { style } from "@vanilla-extract/css";
 export const postsContainer = style({
     display: "flex",
     flexDirection: "row",
+    justifyContent: "space-around",
     flexWrap: "wrap",
 });
 

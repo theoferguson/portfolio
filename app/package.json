@@ -42,6 +42,7 @@
   "dependencies": {
     "@auth/core": "^0.7.1",
     "@builder.io/qwik-auth": "^0.1.0",
-    "@vanilla-extract/css": "^1.11.0"
+    "@vanilla-extract/css": "^1.11.0",
+    "@vanilla-extract/recipes": "^0.4.0"
   }
 }
