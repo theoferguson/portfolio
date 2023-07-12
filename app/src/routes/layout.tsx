@@ -1,10 +1,10 @@
 import { component$, Slot } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
-import { Header } from '~/components/Header';
 import { BackgroundBlur } from '~/components/Posts/BackgroundAssets/BackgroundBlur';
-import { main } from './MainLayout.css';
 import { BlueDot } from '~/assets/BlueDot';
 import { GreenDot } from '~/assets/GreenDot';
+import { Header } from '~/components/Header/Header';
+import { css } from '../../styled-system/css';
 
 const API_URL = import.meta.env.DEV ? import.meta.env.PUBLIC_DEV_API_URL : import.meta.env.PUBLIC_PROD_API_URL;
 
@@ -25,9 +25,19 @@ export const useServerTimeLoader = routeLoader$(() => {
   };
 });
 
+const background = css({
+  position: "relative",
+})
+
+const main = css({
+  position: "relative",
+  zIndex: 1,
+});
+
 export default component$(() => {
+
   return (
-    <>
+    <div class={background} >
       <BackgroundBlur position='left'>
         <GreenDot />
       </ BackgroundBlur>
@@ -40,6 +50,6 @@ export default component$(() => {
           <Slot />
         </main>
       </div>
-    </>
+    </div>
   );
 });

@@ -4,6 +4,7 @@ export const header = style({
     display: "flex",
     justifyContent: "space-between",
     fontSize: 25,
+    alignItems: "center",
 });
 
 export const headerLinkSection = style({
