@@ -6,7 +6,7 @@ import { GreenDot } from '~/assets/GreenDot';
 import { Header } from '~/components/Header/Header';
 import { css } from '../../styled-system/css';
 
-const API_URL = import.meta.env.DEV ? import.meta.env.PUBLIC_DEV_API_URL : import.meta.env.PUBLIC_PROD_API_URL;
+const API_URL = import.meta.env.PUBLIC_PROD_API_URL;
 
 export const getAllPosts = routeLoader$(async (requestEvent) => {
   const result = await fetch(`${API_URL}/api/posts?populate=*`, {
