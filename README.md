@@ -14,3 +14,6 @@ todo:
 -add finished content to strapi
 -finish frontend with qwik from design
 -deploy
+
+backend deployed to heroku
+frontend deployed to cloudflare
