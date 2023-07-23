@@ -1,9 +1,8 @@
-import { component$, useContext, useContextProvider, useStore, useTask$ } from "@builder.io/qwik";
-import { getAllPosts } from "~/routes/layout";
-import { PostsContext } from "./PostsContext";
+import { component$, useContext, useTask$ } from "@builder.io/qwik";
 import { PostCard } from "./PostCard";
 import { isServer } from "@builder.io/qwik/build";
 import { css } from "../../../styled-system/css";
+import { PostsContext } from "./PostsContext";
 
 const postsContainer = css({
     display: "flex",
@@ -15,10 +14,7 @@ const postsContainer = css({
 });
 
 export const PostsContainer = component$(() => {
-    const postsArray = useStore(getAllPosts().value.data || []);
-    useContextProvider(PostsContext, postsArray)
-
-    const posts = useContext(PostsContext, postsArray);
+    const posts = useContext(PostsContext);
 
     useTask$(() => {
         if (isServer) {

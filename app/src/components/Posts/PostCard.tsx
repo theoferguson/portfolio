@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { PostType } from "./PostsContext";
+import { type PostType } from "./PostsContext";
 import { useNavigate } from "@builder.io/qwik-city";
 import { css } from "../../../styled-system/css";
 
@@ -37,7 +37,7 @@ const postCardImage = css({
 });
 
 export const PostCard = component$<PostCardProps>(({ post }) => {
-    const API_URL = import.meta.env.DEV ? import.meta.env.PUBLIC_DEV_API_URL : import.meta.env.PUBLIC_PROD_API_URL;
+    const API_URL = import.meta.env.PUBLIC_PROD_API_URL;
     const nav = useNavigate();
 
     return <div class={postContainer} onClick$={() => nav(`${API_URL}/posts/${post.id}`)}>

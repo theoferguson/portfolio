@@ -16,4 +16,4 @@ export interface PostType {
     }
 }
 
-export const PostsContext = createContextId<PostType>('docs.posts-context');
+export const PostsContext = createContextId<PostType[]>('docs.posts-context');
