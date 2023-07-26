@@ -57,7 +57,10 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
 
 HEROKU deployment:
-// in the root of the strapi project
+// in /portfolio_api
 git add .
 git commit -m "commit message"
 git push heroku HEAD:main
+
+local dev:
+npm run develop

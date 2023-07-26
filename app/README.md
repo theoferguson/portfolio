@@ -111,3 +111,8 @@ In the above example, it's saying _all_ pages should be SSR'd. However, the root
 
 In most cases the generated `dist/_routes.json` file is ideal. However, if you need more granular control over each path, you can instead provide you're own `public/_routes.json` file. When the project provides its own `public/_routes.json` file, then the Cloudflare adaptor will not auto-generate the routes config and instead use the committed one within the `public` directory.
 # portfolio_fe_cloudflare
+to deploy to cloudflare:
+-push to git while in /app
+
+local dev:
+npm run dev
