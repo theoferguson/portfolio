@@ -37,10 +37,10 @@ const postCardImage = css({
 });
 
 export const PostCard = component$<PostCardProps>(({ post }) => {
-    const API_URL = import.meta.env.PUBLIC_PROD_API_URL;
+    const API_URL = import.meta.env.DEV ? import.meta.env.PUBLIC_DEV_API_URL : import.meta.env.PUBLIC_API_URL;
     const nav = useNavigate();
 
-    return <div class={postContainer} onClick$={() => nav(`${API_URL}/posts/${post.id}`)}>
+    return <div class={postContainer} onClick$={() => nav(`/posts/${post.id}`)}>
         <img src={`${API_URL}${post.attributes.image.data.attributes.url}`} class={postCardImage} />
         <h2 class={projectName} >{post.attributes.title}</h2>
     </div>

@@ -2,8 +2,6 @@ import { defineConfig, defineGlobalStyles } from "@pandacss/dev"
 
 const globalCss = defineGlobalStyles({
   'html, body': {
-    margin: 25,
-    padding: 0,
     fontFamily: 'Inter, Verdana, Geneva, Tahoma, sans-serif',
   }
 })

@@ -1,6 +1,7 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useContext } from '@builder.io/qwik';
 import { css } from '../../styled-system/css';
 import { Hamburger } from '~/assets/hamburger';
+import { MenuContext } from '~/routes/MenuContext';
 
 const hamburgerButton = css  ({
     background: "transparent",
@@ -13,7 +14,9 @@ const hamburgerButton = css  ({
 });
 
 export const HamburgerMenu = component$(() => {
-    return <button class={hamburgerButton} aria-controls="primary-navigation" aria-expanded="false">
+    const menuOpen = useContext(MenuContext)
+
+    return <button class={hamburgerButton} aria-controls="primary-navigation" aria-expanded="false" onClick$={() => menuOpen.value = !menuOpen.value}>
         <Hamburger />
     </button>
 });

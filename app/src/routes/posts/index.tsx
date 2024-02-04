@@ -3,5 +3,6 @@ import { PostsContainer } from "~/components/Posts/PostsContainer";
 
 export default component$(() => {
 
-    return <PostsContainer />
+    return < PostsContainer />
+
 }); 

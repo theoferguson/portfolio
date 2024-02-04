@@ -4,22 +4,12 @@ import { HamburgerMenu } from "../HamburgerMenu";
 import { css } from "../../../styled-system/css";
 
 const header = css({
+    position: "relative",
     display: "flex",
     justifyContent: "space-between",
     fontSize: 25,
     alignItems: "center",
-});
-
-const headerLinkSection = css({
-    display: "flex",
-    alignItems: "center",
-});
-
-const headerLink = css({
-    textDecoration: "none",
-    paddingLeft: 25,
-    fontSize: 12.5,
-    color: "inherit",
+    zIndex: 3,
 });
 
 export const Header = component$(() => {
@@ -36,10 +26,6 @@ export const Header = component$(() => {
                 </strong>
             </div>
             <HamburgerMenu />
-            <div class={headerLinkSection}>
-                <a class={headerLink} href="/" style={currentLocation.value === "/" ? "text-decoration: underline; text-underline-offset: 3px" : ""}>WORK</a>
-                <a class={headerLink} href="/about" style={currentLocation.value.includes('about') ? "text-decoration: underline; text-underline-offset: 3px" : ""}>ABOUT</a>
-            </div>
         </div>
     );
 });
